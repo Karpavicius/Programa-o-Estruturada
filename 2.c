@@ -1,18 +1,22 @@
 #include <stdio.h>
+#include <math.h>
+struct ponto{
+	int x, y;
+	
+};
+typedef struct ponto Ponto;
+float distPonto (Ponto p1, Ponto p2){
 
-void main (){
-	int N, P, X, Y, cont, i;
+float m=sqrt(pow(p2.x-p1.x, 2)+pow(p2.y-p1.y, 2));
+return m;
 
-	while(1){
-		scanf("%d %d", &N, &P);
-		if (N==0 && P==0)
-			break;
-		cont=0;
-		for (i=0;i<N;i++){
-			scanf("%d %d", &X, &Y);
-			if (X+Y>=P)
-				cont++;
-		}
-		printf ("%d\n", cont);
-	}
+}
+
+int main(){
+	Ponto a, b;
+	printf("Digite o valor de p1 e p2: ");
+	scanf("%d%d%d%d", &a.x, &a.y, &b.x, &b.y);
+
+	printf("%f", distPonto(a, b));
+
 }
